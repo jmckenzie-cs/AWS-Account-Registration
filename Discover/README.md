@@ -6,5 +6,6 @@
 
 | Name | Description |
 |:-|:-|
-| [API Registration](API-Individual.md) | AWS Account Registration Workflow via API |
-| [Discover Data Flow](API-Individual.md) | AWS Account Discover Data Flow |
+| [Registration API](API-Individual.md) | Single AWS Account Registration Workflow via API |
+| [Org Registration API](API-Organization.md) | AWS Organization Registration Workflow via API |
+| [Discover Data Flow](Data-Flow.md) | AWS Account Discover Data Flow |
