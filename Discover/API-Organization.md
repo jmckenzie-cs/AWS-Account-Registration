@@ -150,6 +150,8 @@ A successful response will now contain a role named CrowdStrikeCSPMReader with a
 ## Provision the IAM Role
 At this point you will see your management account and member acocunts listed on the Cloud Security Account Registration page in Falcon, but they will show as inactive.
 
+![image](https://user-images.githubusercontent.com/29733103/215858558-0eb2c93c-8c1d-4a72-8743-36f7e2d3d72a.png)
+
 To complete the registration you may use our [CFT Template](https://cs-prod-cloudconnect-templates.s3-us-west-1.amazonaws.com/aws_cspm_cloudformation_d4c_v2.json), and pass the following parameters using your API response from above: 
 - ExternalID
 - RoleName
