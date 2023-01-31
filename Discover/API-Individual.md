@@ -6,8 +6,9 @@
 ## Prerequisites
 
 1. Falcon API Client and Key with scope: 
-|:-|:-|
+
 |D4C Registration|Read & Write|
+|-|-|
 
 2. Access to a user account with admin rights in the AWS account (CrowdStrike never has access to these credentials)
 
