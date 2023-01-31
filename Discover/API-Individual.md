@@ -53,7 +53,7 @@ curl -X 'POST' \
   ]
 }'
 ```
-A successful response will contain important information, such as the your iam_role_arn, The CrowdStrike intermediate_role_arn, external_id, your account registration status and the cloudformation_url to easily launch the stack in your AWS account.
+A successful response will contain important information, such as your iam_role_arn, The CrowdStrike intermediate_role_arn, external_id, your account registration status and the cloudformation_url to easily launch the stack in your AWS account.
 
 ```
 {
@@ -146,10 +146,12 @@ A successful response will now contain a role named CrowdStrikeCSPMReader with a
 
 ## Provision the IAM Role
 At this point you will see your account on the Cloud Security Account Registration page in Falcon, but the account will show as inactive.
-<screenshot>
-The iam_role_arn, intermediate_role_arn and external_id from the API response must be provisioned in your account.  The IAM role sets read only permissions required for the Discover Service while the intermediate_role_arn & external_id are used in the IAM role trust policy to ensure only CrowdStrike can assume the role.
+
+![image](https://user-images.githubusercontent.com/29733103/215858141-d26adb2d-42e0-4413-b2ae-aec3056ba874.png)
+
+To complete the registration, the cloudformation_url included in the API response can be used to automatically create a Cloudformation stack with all required parameters pre-filled to deploy the IAM role in your account.  The IAM role sets read only permissions required for the Discover Service while the intermediate_role_arn & external_id are used in the IAM role trust policy to ensure only CrowdStrike can assume the role.
   
-The cloudformation_url included in the API response can be used to automatically create a Cloudformation stack with all required parameters pre-filled to deploy the IAM role in your account.  You may instead review the permissions required in the role and create the role according to your organization's IAM management policies.
+ You may instead review the permissions required in the role and create the role according to your organization's IAM management policies.
   
 The required permissions:
 ```
