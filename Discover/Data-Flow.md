@@ -1,5 +1,7 @@
 # Discover Data Flow - AWS
 
+![image](https://user-images.githubusercontent.com/29733103/215833042-a3afa617-9126-4647-a8f2-d9ee81244f90.png)
+
 ## Assume Role
 The CrowdStrike Discover service assumes the role provisioned during account registration.
   
