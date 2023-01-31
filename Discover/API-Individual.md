@@ -1,14 +1,17 @@
 # Discover - AWS Account Registration Workflow via API
 
+![image](https://user-images.githubusercontent.com/29733103/215820237-0cef9380-c951-4e11-b57c-bfbd3c54fd66.png)
+
+
 ## Prerequisites
 
 1. Falcon API Client and Key with scope: 
-|-|-|
+|:-|:-|
 |D4C Registration|Read & Write|
 
 2. Access to a user account with admin rights in the AWS account (CrowdStrike never has access to these credentials)
 
-## Gather Required Information
+## Gather Information
 
 - AWS Account ID
 - Account Type (Commercial or GovCloud)
@@ -17,6 +20,10 @@
 ## Authenticate with CrowdStrike API and Get Bearer Token
 This step can be completed in the Falcon Swagger UI or in your terminal using the following command:
 ```
+export FALCON_CLIENT_ID=
+export FALCON_CLIENT_SECRET=
+export FALCON_CLOUD_API=api.crowdstrike.com  # api.crowdstrike.com (us-1), api.us-2.crowdstrike.com (us-2), api.eu-1.crowdstrike.com (eu-1)
+
 export BEARER_TOKEN=$(curl \
 --silent \
 --header "Content-Type: application/x-www-form-urlencoded" \
@@ -139,7 +146,7 @@ A successful response will now contain a role named CrowdStrikeCSPMReader with a
 ## Provision the IAM Role
 At this point you will see your account on the Cloud Security Account Registration page in Falcon, but the account will show as inactive.
 <screenshot>
-The iam_role_arn and external_id from the API response must be provisioned in your account.  The IAM role sets read only permissions required for the Discover Service and the external_id is used in the IAM role trust policy to ensure only CrowdStrike can assume the role.
+The iam_role_arn, intermediate_role_arn and external_id from the API response must be provisioned in your account.  The IAM role sets read only permissions required for the Discover Service while the intermediate_role_arn & external_id are used in the IAM role trust policy to ensure only CrowdStrike can assume the role.
   
 The cloudformation_url included in the API response can be used to automatically create a Cloudformation stack with all required parameters pre-filled to deploy the IAM role in your account.  You may instead review the permissions required in the role and create the role according to your organization's IAM management policies.
   
