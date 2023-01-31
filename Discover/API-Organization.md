@@ -1,6 +1,8 @@
 # Discover - AWS Organization Registration Workflow via API
 
-![image](https://user-images.githubusercontent.com/29733103/215820237-0cef9380-c951-4e11-b57c-bfbd3c54fd66.png)
+![image](https://user-images.githubusercontent.com/29733103/215856631-6eff0384-d6d7-454e-a142-813ac192edd6.png)
+  
+![image](https://user-images.githubusercontent.com/29733103/215856728-feae43d9-f0f5-44b0-8b47-7d98f38813ea.png)
 
 
 ## Prerequisites
@@ -54,7 +56,7 @@ curl -X 'POST' \
   ]
 }'
 ```
-A successful response will contain important information, such as the your iam_role_arn, The CrowdStrike intermediate_role_arn, external_id and your account registration status.
+A successful response will contain important information, such as your iam_role_arn, The CrowdStrike intermediate_role_arn, external_id and your account registration status.
 
 ```
 {
